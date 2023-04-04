@@ -4,9 +4,8 @@ import { Outlet, useNavigation } from 'react-router-dom';
 
 const App = () => {
   const navigation = useNavigation();
-  console.log(navigation)
   return (
-    <div> 
+    <div className='px-5 md:px-10'> 
       <Header></Header>
       {
         navigation.state === "loading" && <div className='flex justify-center h-screen items-center'><progress className="progress progress-info  w-56 "></progress></div>
