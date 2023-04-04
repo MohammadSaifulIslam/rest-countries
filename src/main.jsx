@@ -14,6 +14,7 @@ import Service from './components/Service/Service';
 import Contact from './components/Contact/Contact';
 import Home from './components/Home/Home';
 import Countries from './components/Countries/Countries';
+import CountryDetails from './components/CountryDetails/CountryDetails';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
         path:'countries',
         element:<Countries></Countries>,
         loader: () => fetch(`https://restcountries.com/v3.1/all`)
+      },
+      {
+        path:'country/:countryId',
+        element: <CountryDetails></CountryDetails>,
+        loader: ({params}) => fetch(`https://restcountries.com/v3.1/alpha/${params.countryId}`)
       },
       {
         path:"contact",

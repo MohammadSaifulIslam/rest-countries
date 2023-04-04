@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Country = ({ country }) => {
-    const { name, capital, region, population, flags } = country;
+    const { name, capital, region, population, flags,cca3 } = country;
     return (
         <>
             <div className="card  card-compact bg-base-100 shadow-2xl p-5">
@@ -12,7 +13,7 @@ const Country = ({ country }) => {
                     <p>Region: {region}</p>
                     <p>Population: {population}</p>
                     <div className="card-actions mt-2">
-                        <button className="btn btn-primary">Details</button>
+                        <Link to={`/country/${cca3}`} className="btn btn-primary">Details</Link>
                     </div>
                 </div>
             </div>
